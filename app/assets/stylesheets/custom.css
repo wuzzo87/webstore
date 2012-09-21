@@ -1,42 +1,6 @@
 body {
-	background-color: #BFEDFF;
+	background-color: #550000;
 }
-
-/* Header and footer */
-
-header {
-	background-color: white;
-	margin-top: 10px;
-	padding-bottom: 5px;
-	border: 10px;
-}
-
-header img {
-	width: 45%;
-	margin-left: 265px;
-}
-
-header nav {
-
-}
-
-footer {
-	text-align: center;
-	margin-top: 20px;
-	width: 710px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-footer nav {
-	margin-left: 50px;
-	float: none;
-}
-
-footer nav ul li a {
-	font-size: 100%;
-}
-
 
 /* Navigation */
 
@@ -83,6 +47,44 @@ a:hover {
 a:visited {
 
 }
+
+/* Header and footer */
+
+header {
+	border: 4px solid #888888;
+	background-color: #eeeeee;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+header img {
+	width: 45%;
+	margin-left: 265px;
+}
+
+header nav {
+
+}
+
+footer {
+	text-align: center;
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer nav {
+	background-color: #550000;
+	margin-left: 0px;
+	float: none;
+}
+
+footer nav ul li a {
+	font-size: 100%;
+	color: white;
+}
+
 
 #nav{
 	list-style:none;
@@ -143,11 +145,39 @@ a:visited {
 }
 
 section {
-	height: 600px;
-	font-size: 120%;
-	background: white;
+	font-size: 100%;
+	background-color: white;
 }
 
 div .gems {
 	background-color: black;
 }
+
+div.entry
+  {
+  margin:2px;
+  border:1px solid black;
+  height:auto;
+  width:auto;
+  text-align:center;
+  }
+div.entry img
+  {
+  display:inline;
+  height:60px;
+  width:60px;
+  margin:3px;
+  border:1px solid #ffffff;
+  }
+div.entry a:hover img
+  {
+  border:1px solid #0000ff;
+  }
+div.desc
+  {
+  text-align:center;
+  font-weight:normal;
+  width:120px;
+  margin:2px;
+  }
+

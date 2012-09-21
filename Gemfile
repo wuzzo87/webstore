@@ -6,8 +6,6 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'will_paginate'
-gem 'populator'
-gem 'faker'
 
 
 # Gems used only for assets and not required
@@ -25,6 +23,9 @@ end
 group :development do
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'annotate', '~> 2.4.1.beta' 
+  gem 'populator'
+  gem 'faker'
 end
 
 group :test do

@@ -1,13 +1,20 @@
 Webstore::Application.routes.draw do
 
+  resources :products
+
+  get "user/new"
+
   get "pages/home"
 
   get "pages/contact"
   
   get "pages/about"
   
+  get "store/index"
+  
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
+  match '/store',   :to => 'store#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
