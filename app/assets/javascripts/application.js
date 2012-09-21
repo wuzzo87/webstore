@@ -13,3 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function () { 
+    
+  //  $('#menu li ul').hide();
+    $('#menu li').hover(
+        function () {
+            //show its submenu
+            $('ul', this).stop().slideDown(100);
+ 
+        }, 
+        function () {
+            //hide its submenu
+            $('ul', this).stop().slideUp(100);          
+        }
+    );
+     
+});

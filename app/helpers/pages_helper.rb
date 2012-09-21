@@ -21,11 +21,11 @@ module PagesHelper
   end
   
   def find_us
-    image_tag("find_us_copy.jpg", :alt => "Find Us", :align => "middle")
+    image_tag("find_us_2.jpg", :alt => "Find Us", :align => "middle")
   end
   
   def catalogue
-    image_tag("spring_catalogue.jpg", :alt => "Spring Catalogue 2012", 
+    image_tag("spring_2.jpg", :alt => "Spring Catalogue 2012", 
         :align => "middle")
   end
 end
