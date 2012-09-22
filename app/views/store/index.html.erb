@@ -4,18 +4,21 @@
 </p>
 <% end %>
 
-<h2>All products</h2>
-<% @products.each do |product| %>
-<div class="entry">
-	<%= link_to image_tag(product.image_url), product %>
-	<div class="desc">
-		<%= sanitize product.description %>
+<div class="span-24">
+	<h2>All products</h2>
+	<% @products.each do |product| %>
+	<div class="entry">
+		<%= link_to image_tag(product.image_url), "assets/" + product.image_url ,
+		:id => "product_image", :title => product.description %>
+		<div class="desc">
+			<%= sanitize product.description %>
+		</div>
+		<div class="price_line">
+			<span class="price"><%= number_to_currency(product.price) %></span>
+		</div>
 	</div>
-	<div class="price_line">
-		<span class="price"><%= number_to_currency(product.price) %></span>
-	</div>
+	<% end %>
 </div>
-<% end %>
 
 <p>
 	<%= will_paginate @products %>

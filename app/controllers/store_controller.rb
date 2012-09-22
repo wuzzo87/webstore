@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
   def index
-    @products = Product.paginate :page => params[:page], :per_page => 5
+    @products = Product.paginate :page => params[:page], :per_page => 8
   end
 end

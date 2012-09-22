@@ -11,6 +11,6 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("store_title.png", :alt => "Le Grand Bijoux", :align => "middle")
+    image_tag("title_3.jpg", :alt => "Le Grand Bijoux", :align => "middle")
   end
 end

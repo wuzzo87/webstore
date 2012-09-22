@@ -14,20 +14,48 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).ready(function() {
 
-$(document).ready(function () { 
-    
-  //  $('#menu li ul').hide();
-    $('#menu li').hover(
-        function () {
-            //show its submenu
-            $('ul', this).stop().slideDown(100);
- 
-        }, 
-        function () {
-            //hide its submenu
-            $('ul', this).stop().slideUp(100);          
-        }
-    );
-     
-});
+	//  $('#menu li ul').hide();
+	$('#menu li').hover(function() {
+		//show its submenu
+		$('ul', this).stop().slideDown(100);
+
+	}, function() {
+		//hide its submenu
+		$('ul', this).stop().slideUp(100);
+	});
+
+	/* This is basic - uses default settings */
+
+	/*$("a#product_image").fancybox();*/
+	/*$("a#product_image").fancybox( {
+			'transitionIn' : 'elastic',
+			'transitionOut' : 'elastic',
+			'easingIn' : 'easeInOutBack',
+			'easingOut' : 'easeOutBack',
+			'speedIn' : 300,
+			'speedOut' : 300
+			//cyclic : true,
+			//titlePosition : 'over',
+			//title : $(this).attr('rel')
+		});*/
+	/* Using custom settings */
+
+	/*
+	 $("a#inline").fancybox({
+	 'hideOnContentClick': true
+	 });*/
+
+	/* Apply fancybox to multiple items */
+
+	 $("a#product_image").fancybox({
+		 'transitionIn'	:	'elastic',
+		 'transitionOut'	:	'elastic',
+		 'speedIn'		:	600,
+		 'speedOut'		:	200,
+		 'overlayShow'	:	true,
+		 'opacity'      :   true
+	 });
+	 
+}); 
