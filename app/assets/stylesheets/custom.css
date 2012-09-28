@@ -142,7 +142,7 @@ footer nav ul li a {
 	color: #D4A017;
 }
 
-section {
+section, .product_display {
 	font-size: 100%;
 	background-color: black;
 }
@@ -160,6 +160,11 @@ div .gems {
 	color: #eeeeee;
 }
 
+.product_show_page {
+	/*height: 500px;*/
+}
+
+/*
 #product_image img {
 	display: inline;
 	margin: 2px;
@@ -167,6 +172,7 @@ div .gems {
 	height: 140px;
 	border: 2px groove #cccccc;
 }
+*/
 
 #product_image img:hover {
 	border: 4px groove #D4A017;
@@ -193,6 +199,39 @@ div .gems {
 	color: #996600;
 }
 
+.field, h1, h2, h3, p {
+	color: #eeeeee;
+	margin-left: 15px;
+}
+
+.attachment_block {
+	margin-left: 20px;
+	margin-right: 450px;
+	border: 1px solid #eeeeee;
+}
+
+.attachment_block a {
+	margin-left: 20px;
+}
+
+.attachment_block #upload_block {
+	margin: 8px;
+	border: 1px solid #eeeeee;
+}
+
+.primary_photo {
+	background-color: #eeeeee;
+}
+
+.secondary_photos{
+	height: 115px;
+	width: 115px;
+}
+
+.secondary_photos img{
+	height: 70px;
+	width: 70px;
+}
 
 /*
  div.entry

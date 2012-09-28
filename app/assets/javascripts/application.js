@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery_nested_form
 
 $(document).ready(function() {
 
@@ -26,20 +27,43 @@ $(document).ready(function() {
 		$('ul', this).stop().slideUp(100);
 	});
 
+	// Function to limit the number of photos that can be added to each product
+	$(function() {
+		var fieldsCount, maxFieldsCount = 2, $addLink = $('a.add_nested_fields');
+
+		function toggleAddLink() {
+			$addLink.toggle(fieldsCount <= maxFieldsCount)
+		}
+
+
+		$(document).on('nested:fieldAdded', function() {
+			fieldsCount += 1;
+			toggleAddLink();
+		});
+
+		$(document).on('nested:fieldRemoved', function() {
+			fieldsCount -= 1;
+			toggleAddLink();
+		});
+
+		// count existing nested fields after page was loaded
+		fieldsCount = $('form .fields').length;
+		toggleAddLink();
+	})
 	/* This is basic - uses default settings */
 
 	/*$("a#product_image").fancybox();*/
 	/*$("a#product_image").fancybox( {
-			'transitionIn' : 'elastic',
-			'transitionOut' : 'elastic',
-			'easingIn' : 'easeInOutBack',
-			'easingOut' : 'easeOutBack',
-			'speedIn' : 300,
-			'speedOut' : 300
-			//cyclic : true,
-			//titlePosition : 'over',
-			//title : $(this).attr('rel')
-		});*/
+	 'transitionIn' : 'elastic',
+	 'transitionOut' : 'elastic',
+	 'easingIn' : 'easeInOutBack',
+	 'easingOut' : 'easeOutBack',
+	 'speedIn' : 300,
+	 'speedOut' : 300
+	 //cyclic : true,
+	 //titlePosition : 'over',
+	 //title : $(this).attr('rel')
+	 });*/
 	/* Using custom settings */
 
 	/*
@@ -49,13 +73,14 @@ $(document).ready(function() {
 
 	/* Apply fancybox to multiple items */
 
+	/*
 	 $("a#product_image").fancybox({
-		 'transitionIn'	:	'elastic',
-		 'transitionOut'	:	'elastic',
-		 'speedIn'		:	600,
-		 'speedOut'		:	200,
-		 'overlayShow'	:	true,
-		 'opacity'      :   true
+	 'transitionIn'	:	'elastic',
+	 'transitionOut'	:	'elastic',
+	 'speedIn'		:	600,
+	 'speedOut'		:	200,
+	 'overlayShow'	:	true,
+	 'opacity'      :   true
 	 });
-	 
-}); 
+	 */
+});
