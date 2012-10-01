@@ -147,6 +147,11 @@ section, .product_display {
 	background-color: black;
 }
 
+.product_display img{
+	height: 140px;
+	width: 140px;
+}
+
 div .gems {
 	background-color: black;
 }
@@ -161,7 +166,12 @@ div .gems {
 }
 
 .product_show_page {
-	/*height: 500px;*/
+	font-size: 100%;
+	background-color: black;
+}
+
+.product_show_page #nav_links {
+	margin-left: 15px;
 }
 
 /*
@@ -220,17 +230,23 @@ div .gems {
 }
 
 .primary_photo {
-	background-color: #eeeeee;
+	margin-top: 10px;
+}
+
+.primary_photo img{
+	margin-left: 15px;
 }
 
 .secondary_photos{
-	height: 115px;
-	width: 115px;
+	display: inline-block;
+	height: 107px;
+	width: 107px;
 }
 
 .secondary_photos img{
-	height: 70px;
-	width: 70px;
+	margin-left: 15px;
+	height: 90px;
+	width: 90px;
 }
 
 /*

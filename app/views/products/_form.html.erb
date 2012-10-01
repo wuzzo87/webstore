@@ -1,33 +1,57 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= nested_form_for @product, :html => {:multipart => true} do |f| %>
+	<% if @product.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+		
+			<ul>
+				<% @product.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label :title %>
+		<br />
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label :description %>
+		<br />
+		<%= f.text_area :description %>
+	</div>
+	<div class="field">
+		<%= f.label :category %>
+		<br />
+		<%= f.select( :category, options_for_select(categories)) %>
+	</div>
+	<div class="field">
+		<%= f.label :quantity, "Quantity in stock" %>
+		<br />
+		<%= f.number_field :quantity , :in => 1..1000 %>
+	</div>
+	<div class="field">
+		<%= f.label :price %>
+		<br />
+		<%= f.text_field :price %>
+	</div>
+	</br>
+	<div class="attachment_block">
+	<%= f.fields_for :photos do |photo|  %>
+		<div id="upload_block">
+			</br><p><%= photo.label :file %> : 	<%= photo.file_field :file %></br></br>OR</p>
+			<p><%= photo.label :remote_file_url %> : 	
+				 <%= photo.text_field :remote_file_url %></p>
+				 <p>Use as primary photo? : 
+				 <%= photo.radio_button :primary, "true" %></p>
+			<%= photo.link_to_remove "Remove this photo" %>
+		</div>
+	<% end %>
+	<%= f.link_to_add "Add photo", :photos %>
+	</div>
+	<br/>
+	<p><%= f.submit %></p>
 <% end %>

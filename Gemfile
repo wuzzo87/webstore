@@ -6,7 +6,11 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'will_paginate'
-
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'jquery-rails'
+gem 'fancybox-rails'
+gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 
 # Gems used only for assets and not required
 # in production environments by default.

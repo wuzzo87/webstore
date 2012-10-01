@@ -1,6 +1,8 @@
 Webstore::Application.routes.draw do
 
-  resources :products
+  resources :products do
+     resources :photos
+  end
 
   get "user/new"
 

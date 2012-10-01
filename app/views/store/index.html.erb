@@ -4,22 +4,28 @@
 </p>
 <% end %>
 
-<div class="span-24">
+<div class="span-24 product_display">
 	<h2>All products</h2>
+	<% if @products.empty? %>
+		<h3>There are no products to display</h3>
+	<% else %>
 	<% @products.each do |product| %>
 	<div class="entry">
-		<%= link_to image_tag(product.image_url), "assets/" + product.image_url ,
-		:id => "product_image", :title => product.description %>
+		<%= link_to image_tag(product.primary_photo.first.file_url(:thumb).to_s), 
+		 product, :id => "product_image", :title => product.description %>
 		<div class="desc">
-			<%= sanitize product.description %>
+			<%= sanitize product.title %>
 		</div>
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price) %></span>
 		</div>
 	</div>
 	<% end %>
+	<% end %>
 </div>
 
 <p>
-	<%= will_paginate @products %>
+	<% if !@products.empty? %>
+		<%= will_paginate @products %>
+	<% end %>
 </p>

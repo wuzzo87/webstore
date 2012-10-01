@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require fancybox
 //= require jquery_nested_form
 
 $(document).ready(function() {
@@ -26,6 +27,8 @@ $(document).ready(function() {
 		//hide its submenu
 		$('ul', this).stop().slideUp(100);
 	});
+	
+	$("a.product_gallery").fancybox();
 
 	// Function to limit the number of photos that can be added to each product
 	$(function() {
@@ -73,14 +76,14 @@ $(document).ready(function() {
 
 	/* Apply fancybox to multiple items */
 
-	/*
-	 $("a#product_image").fancybox({
+	
+	 /*$("a#product_primary_photo").fancybox({
 	 'transitionIn'	:	'elastic',
 	 'transitionOut'	:	'elastic',
 	 'speedIn'		:	600,
 	 'speedOut'		:	200,
 	 'overlayShow'	:	true,
 	 'opacity'      :   true
-	 });
-	 */
+	 });*/
+	 
 });

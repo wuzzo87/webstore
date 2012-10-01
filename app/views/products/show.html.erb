@@ -1,3 +1,24 @@
+<div class="span-24 product_show_page">
+	<div class="span-6">
+		<div class="primary_photo">
+			<%= link_to image_tag(@product.primary_photo.first.file_url(:thumb).to_s), 
+				 @product.primary_photo.first.file_url.to_s, :class => "product_gallery",
+				 :title => @product.title %>
+		</div>
+		<% if !@product.secondary_photos.nil? || !@product.secondary_photos.empty? %>
+			<div class="span-6">
+				<% @product.secondary_photos.each do |photo| %>
+				<div class="secondary_photos">
+					<%= link_to image_tag(photo.file_url(:thumb).to_s), 
+						 photo.file_url.to_s, :class => "product_gallery",
+						  :title => @product.title %>
+				</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+
+<div class="span-18 last">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -11,8 +32,13 @@
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= @product.image_url %>
+  <b>Category:</b>
+  <%= @product.category %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @product.quantity %>
 </p>
 
 <p>
@@ -20,6 +46,11 @@
   <%= @product.price %>
 </p>
 
-
+<div id="nav_links">
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</div>
+
+</div>
+
+</div>

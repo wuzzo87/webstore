@@ -4,7 +4,7 @@
 	</div>
     <nav class="round">
     	<ul id="nav">
-    		<li><%= link_to "Shop Online", store_path %>
+    		<li><%= link_to "Shop Online", store_path(:category => "All") %>
     			<%= render 'menus/shop_menu' %>		
     		</li>
     		<li><%= link_to "Articles", '#' %></li>
