@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928030148) do
+ActiveRecord::Schema.define(:version => 20121001100310) do
+
+  create_table "addresses", :force => true do |t|
+    t.text     "street"
+    t.text     "suburb"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
+    t.integer  "addressable_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "addressable_type"
+    t.string   "state"
+  end
+
+  add_index "addresses", ["addressable_id"], :name => "index_addresses_on_addressable_id"
 
   create_table "photos", :force => true do |t|
     t.string   "file"

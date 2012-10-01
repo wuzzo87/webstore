@@ -249,6 +249,38 @@ div .gems {
 	width: 90px;
 }
 
+.custom_button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	cursor: pointer;
+	background-color:transparent;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#0066cc;
+	font-family:Helvetica;
+	font-size:15px;
+	font-weight:100%;
+	padding:6px 24px;
+	text-decoration:none;
+}
+.custom_button:hover {
+	position:relative;
+	color: #D4A017;
+	top:1px;
+}
+
+.custom_button:active {
+	color: #D4A017;
+}
+
+#error_explanation {
+	background-color: #CC3300;
+}
+
 /*
  div.entry
  {

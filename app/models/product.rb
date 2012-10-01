@@ -54,5 +54,6 @@ end
 #  updated_at  :datetime        not null
 #  category    :string(255)
 #  quantity    :integer
+#  subcategory :string(255)
 #
 

@@ -1,0 +1,9 @@
+<h2>Sign up</h2>
+
+<%= nested_form_for @user, :html => {:multipart => true} do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= render 'fields', :f => f %>
+	<div class="action">
+		<%= f.submit "Sign up", :class => "custom_button" %>
+	</div>
+<% end %>
