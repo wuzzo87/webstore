@@ -1,0 +1,12 @@
+<%= address.street %><br>
+<% if address.suburb.blank? %>
+<%= address.city %>, <%= address.postcode %></br>
+<%= address.country %>
+<% elsif address.city.blank? %>
+<%= address.suburb %>, <%= address.postcode %></br>
+<%= address.country %>
+<% else %>
+<%= address.suburb %>, <%= address.postcode %></br>
+<%= address.city %></br>
+<%= address.country %>
+<% end %>

@@ -10,7 +10,11 @@
     		<li><%= link_to "Articles", '#' %></li>
     		<li><%= link_to "Contact", contact_path %></li>
 	    	<li><%= link_to "About", "#" %></li>
-	    	<li><%= link_to "Sign in", signin_path %></li>
+	    	<% if signed_in? %>
+	    		<li><%= link_to "Sign out", signout_path %></li>
+	    	<% else %>
+	    		<li><%= link_to "Sign in", signin_path %></li>
+    		<% end %>
     	</ul>
     </nav>
 </header>

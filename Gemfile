@@ -11,6 +11,7 @@ gem 'carrierwave'
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
+gem 'activeadmin'
 
 # Gems used only for assets and not required
 # in production environments by default.

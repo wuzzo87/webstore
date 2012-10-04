@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation,
                   :addresses_attributes
   
-  has_many :addresses, :as => :addressable
+  has_many :addresses, :as => :addressable, :dependent => :destroy
   
   accepts_nested_attributes_for :addresses
 
@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
                        :length => { :within => 6..40 }
 
   before_save :encrypt_password
+  
+  scope :admin, where(:admin => true)
   
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
